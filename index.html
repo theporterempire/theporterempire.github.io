@@ -1,190 +1,1252 @@
-<!-- NAVIGATION -->
-<nav class="navbar">
-  <a href="#home" class="logo">THE PORTER EMPIRE</a>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07130e">
+<meta name="description" content="The Porter Empire — Built to Lead. Designed to Last.">
+<title>The Porter Empire | Jaden Porter — Founder & CEO</title>
 
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#vision">Vision</a>
-    <a href="#business">Business</a>
-    <a href="#community">Community</a>
-    <a href="#connect">Connect</a>
+<style>
+:root{
+  --bg:#07130e;
+  --bg2:#0b1d15;
+  --panel:#102a1f;
+  --gold:#d8b45a;
+  --gold2:#f0d98b;
+  --cream:#f6f1df;
+  --muted:#b8c3bb;
+  --line:rgba(216,180,90,.24);
+  --max:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--cream);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(92%,var(--max));
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(7,19,14,.95);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
+
+nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold2);
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.brand-logo{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:1px solid var(--gold);
+  background:#123b27;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+
+.nav-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  font:700 .78rem Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.nav-links a:hover{
+  color:var(--gold2);
+}
+
+.hero{
+  min-height:88vh;
+  display:grid;
+  place-items:center;
+  padding:90px 0;
+  background:
+    radial-gradient(circle at 78% 25%,rgba(216,180,90,.12),transparent 30%),
+    linear-gradient(135deg,var(--bg),var(--bg2));
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font:700 .78rem Arial,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:clamp(3rem,7vw,6.8rem);
+  line-height:.95;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.gold{color:var(--gold2)}
+
+.hero p{
+  color:var(--muted);
+  max-width:650px;
+  margin:28px 0;
+  font-size:1.08rem;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border:1px solid var(--gold);
+  font:800 .78rem Arial,sans-serif;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:.2s;
+}
+
+.btn.primary{
+  background:var(--gold);
+  color:#07130e;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.logo-stage{
+  width:min(430px,85vw);
+  aspect-ratio:1;
+  margin:auto;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle,#123b27 0%,#0b281a 58%,#07130e 72%);
+  border:1px solid rgba(216,180,90,.45);
+  box-shadow:
+    0 0 0 15px rgba(216,180,90,.03),
+    0 25px 80px rgba(0,0,0,.4);
+}
+
+.logo-svg{
+  width:78%;
+  height:78%;
+}
+
+section{
+  padding:105px 0;
+  border-top:1px solid rgba(216,180,90,.12);
+}
+
+.section-head{
+  max-width:800px;
+  margin-bottom:45px;
+}
+
+h2{
+  font-size:clamp(2.2rem,5vw,4rem);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:1.05rem;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.card{
+  background:linear-gradient(145deg,rgba(16,42,31,.95),rgba(11,29,21,.95));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:30px;
+}
+
+.card h3{
+  color:var(--gold2);
+  font-size:1.35rem;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:var(--muted);
+  margin-bottom:15px;
+}
+
+.number{
+  color:var(--gold);
+  font:800 .75rem Arial,sans-serif;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+blockquote{
+  border-left:3px solid var(--gold);
+  padding-left:20px;
+  margin:20px 0;
+  color:var(--cream);
+  font-style:italic;
+}
+
+.rules{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.rule{
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(16,42,31,.55);
+}
+
+.rule strong{
+  display:block;
+  color:var(--gold2);
+  margin-bottom:7px;
+}
+
+.rule span{
+  color:var(--muted);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:35px;
+}
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.contact-info a{
+  color:var(--gold2);
+}
+
+form{
+  display:grid;
+  gap:16px;
+}
+
+label{
+  display:grid;
+  gap:7px;
+  color:var(--cream);
+  font:700 .8rem Arial,sans-serif;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:15px;
+  border-radius:8px;
+  border:1px solid var(--line);
+  background:#07130e;
+  color:var(--cream);
+  font:16px Georgia,serif;
+}
+
+textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+footer{
+  padding:45px 0;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:var(--muted);
+}
+
+footer strong{
+  color:var(--gold2);
+}
+
+@media(max-width:850px){
+  .hero-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .rules{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:70px 0;
+  }
+}
+
+@media(max-width:520px){
+  .rules{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:3.4rem;
+  }
+
+  .brand span{
+    font-size:.72rem;
+  }
+}
+</style>
+</head>
+
+<body id="top">
+
+<header>
+  <div class="container">
+    <nav>
+
+      <a class="brand" href="#top">
+
+        <div class="brand-logo">
+          <svg class="logo-svg" viewBox="0 0 500 500"
+               xmlns="http://www.w3.org/2000/svg">
+
+            <circle cx="250" cy="250" r="238"
+                    fill="#123b27"
+                    stroke="#d8b45a"
+                    stroke-width="5"/>
+
+            <!-- Crown -->
+            <path d="M150 135 L190 175 L250 115 L310 175 L350 135
+                     L335 205 L165 205 Z"
+                  fill="none"
+                  stroke="#d8b45a"
+                  stroke-width="9"
+                  stroke-linejoin="round"/>
+
+            <circle cx="150" cy="135" r="7" fill="#d8b45a"/>
+            <circle cx="250" cy="115" r="7" fill="#d8b45a"/>
+            <circle cx="350" cy="135" r="7" fill="#d8b45a"/>
+
+            <!-- Laurel left -->
+            <path d="M145 225
+                     C95 260 92 330 145 365"
+                  fill="none"
+                  stroke="#d8b45a"
+                  stroke-width="7"
+                  stroke-linecap="round"/>
+
+            <path d="M130 245 l-35 -12
+                     M112 270 l-37 -4
+                     M108 298 l-37 7
+                     M116 325 l-34 18
+                     M135 348 l-25 28"
+                  fill="none"
+                  stroke="#d8b45a"
+                  stroke-width="7"
+                  stroke-linecap="round"/>
+
+            <!-- Laurel right -->
+            <path d="M355 225
+                     C405 260 408 330 355 365"
+                  fill="none"
+                  stroke="#d8b45a"
+                  stroke-width="7"
+                  stroke-linecap="round"/>
+
+            <path d="M370 245 l35 -12
+                     M388 270 l37 -4
+                     M392 298 l37 7
+                     M384 325 l34 18
+                     M365 348 l25 28"
+                  fill="none"
+                  stroke="#d8b45a"
+                  stroke-width="7"
+                  stroke-linecap="round"/>
+
+            <!-- TPE -->
+            <text x="250" y="295"
+                  text-anchor="middle"
+                  fill="#f0d98b"
+                  font-family="Georgia,serif"
+                  font-size="88"
+                  font-weight="bold"
+                  letter-spacing="3">
+              TPE
+            </text>
+
+            <line x1="120" y1="395" x2="380" y2="395"
+                  stroke="#d8b45a"
+                  stroke-width="3"/>
+
+            <text x="250" y="425"
+                  text-anchor="middle"
+                  fill="#f0d98b"
+                  font-family="Arial,sans-serif"
+                  font-size="18"
+                  font-weight="bold"
+                  letter-spacing="3">
+              THE PORTER EMPIRE
+            </text>
+
+            <text x="250" y="448"
+                  text-anchor="middle"
+                  fill="#d8b45a"
+                  font-family="Arial,sans-serif"
+                  font-size="11"
+                  letter-spacing="2">
+              VISION • CHARACTER • LEGACY
+            </text>
+
+            <text x="250" y="470"
+                  text-anchor="middle"
+                  fill="#d8b45a"
+                  font-family="Arial,sans-serif"
+                  font-size="10"
+                  letter-spacing="2">
+              EST. 2026
+            </text>
+
+          </svg>
+        </div>
+
+        <span>THE PORTER EMPIRE</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#founder">About</a>
+        <a href="#vision">Vision</a>
+        <a href="#empire">Business</a>
+        <a href="#standards">Standards</a>
+        <a href="#community">Community</a>
+        <a href="#connect">Connect</a>
+      </div>
+
+    </nav>
   </div>
-</nav>
+</header>
 
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="section-label">THE FOUNDER</div>
+<main>
 
-  <h2>One Vision.<br>Bigger Than One Person.</h2>
+<section class="hero">
+  <div class="container hero-grid">
 
-  <p class="lead">
-    Jaden Porter is building The Porter Empire from the ground up —
-    with the vision of creating something that can grow beyond one
-    person and create opportunities for many.
-  </p>
+    <div>
+      <div class="eyebrow">
+        JADEN PORTER • FOUNDER & CEO
+      </div>
 
-  <p>
-    The journey begins with learning, building, connecting, investing,
-    and understanding what it takes to create something that lasts.
-  </p>
+      <h1>
+        Built to <span class="gold">Lead.</span><br>
+        Designed to <span class="gold">Last.</span>
+      </h1>
 
-  <p>
-    The goal is not simply to build a business.
-    The goal is to build an organization, a network, and eventually
-    an ecosystem where people, businesses, opportunities, and ideas
-    can connect under one vision.
-  </p>
+      <p>
+        The Porter Empire is a vision built from struggle, strengthened
+        through discipline, and driven by the belief that your beginning
+        does not have to determine your ending.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#connect">
+          Join the Vision
+        </a>
+
+        <a class="btn" href="#empire">
+          Explore the Empire
+        </a>
+      </div>
+    </div>
+
+    <div class="logo-stage">
+
+      <svg class="logo-svg" viewBox="0 0 500 500"
+           xmlns="http://www.w3.org/2000/svg">
+
+        <circle cx="250" cy="250" r="238"
+                fill="#123b27"
+                stroke="#d8b45a"
+                stroke-width="5"/>
+
+        <path d="M150 135 L190 175 L250 115 L310 175 L350 135
+                 L335 205 L165 205 Z"
+              fill="none"
+              stroke="#d8b45a"
+              stroke-width="9"
+              stroke-linejoin="round"/>
+
+        <circle cx="150" cy="135" r="7" fill="#d8b45a"/>
+        <circle cx="250" cy="115" r="7" fill="#d8b45a"/>
+        <circle cx="350" cy="135" r="7" fill="#d8b45a"/>
+
+        <path d="M145 225 C95 260 92 330 145 365"
+              fill="none"
+              stroke="#d8b45a"
+              stroke-width="7"
+              stroke-linecap="round"/>
+
+        <path d="M130 245 l-35 -12
+                 M112 270 l-37 -4
+                 M108 298 l-37 7
+                 M116 325 l-34 18
+                 M135 348 l-25 28"
+              fill="none"
+              stroke="#d8b45a"
+              stroke-width="7"
+              stroke-linecap="round"/>
+
+        <path d="M355 225 C405 260 408 330 355 365"
+              fill="none"
+              stroke="#d8b45a"
+              stroke-width="7"
+              stroke-linecap="round"/>
+
+        <path d="M370 245 l35 -12
+                 M388 270 l37 -4
+                 M392 298 l37 7
+                 M384 325 l34 18
+                 M365 348 l25 28"
+              fill="none"
+              stroke="#d8b45a"
+              stroke-width="7"
+              stroke-linecap="round"/>
+
+        <text x="250" y="295"
+              text-anchor="middle"
+              fill="#f0d98b"
+              font-family="Georgia,serif"
+              font-size="88"
+              font-weight="bold">
+          TPE
+        </text>
+
+        <line x1="120" y1="395" x2="380" y2="395"
+              stroke="#d8b45a"
+              stroke-width="3"/>
+
+        <text x="250" y="425"
+              text-anchor="middle"
+              fill="#f0d98b"
+              font-family="Arial,sans-serif"
+              font-size="18"
+              font-weight="bold"
+              letter-spacing="3">
+          THE PORTER EMPIRE
+        </text>
+
+        <text x="250" y="448"
+              text-anchor="middle"
+              fill="#d8b45a"
+              font-family="Arial,sans-serif"
+              font-size="11"
+              letter-spacing="2">
+          VISION • CHARACTER • LEGACY
+        </text>
+
+        <text x="250" y="470"
+              text-anchor="middle"
+              fill="#d8b45a"
+              font-family="Arial,sans-serif"
+              font-size="10"
+              letter-spacing="2">
+          EST. 2026
+        </text>
+
+      </svg>
+
+    </div>
+
+  </div>
 </section>
 
 
-<!-- VISION -->
-<section id="vision" class="section dark-section">
-  <div class="section-label">THE VISION</div>
+<section id="founder">
+  <div class="container">
 
-  <h2>Build.<br>Invest.<br>Expand.<br>Impact.</h2>
-
-  <p>
-    The Porter Empire is designed to connect people with businesses,
-    professionals, opportunities, resources, and relationships that
-    can help create real value.
-  </p>
-
-  <div class="vision-grid">
-    <div class="vision-card">
-      <span>01</span>
-      <h3>CONNECT</h3>
-      <p>Bring the right people and opportunities together.</p>
+    <div class="section-head">
+      <div class="eyebrow">01 • THE FOUNDER</div>
+      <h2>From struggle to purpose.</h2>
     </div>
 
-    <div class="vision-card">
-      <span>02</span>
-      <h3>BUILD</h3>
-      <p>Create businesses, relationships, and opportunities.</p>
-    </div>
+    <div class="grid">
 
-    <div class="vision-card">
-      <span>03</span>
-      <h3>GROW</h3>
-      <p>Turn connections into lasting value.</p>
-    </div>
+      <div class="card">
+        <h3>The Story</h3>
 
-    <div class="vision-card">
-      <span>04</span>
-      <h3>IMPACT</h3>
-      <p>Build something that benefits more than yourself.</p>
+        <p>
+          At 19 years old, Jaden Porter is focused on turning pain,
+          pressure, setbacks, and lessons into fuel for growth.
+          The goal is not to pretend the road is easy.
+          The goal is to keep walking it with courage.
+        </p>
+
+        <blockquote>
+          “Your past may explain where you started.
+          It does not have to decide where you finish.”
+        </blockquote>
+      </div>
+
+      <div class="card">
+        <h3>The Character</h3>
+
+        <p>
+          The Empire is built around discipline, respect, accountability,
+          learning, faith, ambition, and service.
+          Jaden believes success means more when the person becoming
+          successful is also becoming better.
+        </p>
+
+        <blockquote>
+          “Build something you can be proud of —
+          and become someone worth following.”
+        </blockquote>
+      </div>
+
     </div>
   </div>
 </section>
 
 
-<!-- BUSINESS -->
-<section id="business" class="section">
-  <div class="section-label">THE EMPIRE</div>
+<section id="vision">
+  <div class="container">
 
-  <h2>Built Across<br>Multiple Industries.</h2>
+    <div class="section-head">
+      <div class="eyebrow">02 • THE VISION</div>
 
-  <div class="business-grid">
+      <h2>Keep the good. Build the future.</h2>
 
-    <div class="business-card">
-      <h3>REAL ESTATE</h3>
-      <p>Property, development, ownership, and opportunity.</p>
+      <p>
+        The Porter Empire exists to create opportunities,
+        develop people, build businesses, and leave every room,
+        relationship, and community better than we found it.
+      </p>
     </div>
 
-    <div class="business-card">
-      <h3>CONSTRUCTION & ELECTRICAL</h3>
-      <p>Building, skilled trades, infrastructure, and development.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="number">01</div>
+        <h3>Purpose Over Pressure</h3>
+        <p>
+          We pursue growth because growth creates choices,
+          responsibility, opportunity, and the ability to help others.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="number">02</div>
+        <h3>Faith & Discipline</h3>
+        <p>
+          Faith gives direction. Discipline gives movement.
+          Character keeps the foundation strong when nobody is watching.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="number">03</div>
+        <h3>Growth With Others</h3>
+        <p>
+          The goal is not to rise alone.
+          Learn from people, build relationships, create opportunities,
+          and help others discover what they are capable of.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="number">04</div>
+        <h3>Legacy</h3>
+        <p>
+          A legacy is not only what you own.
+          It is what you build, who you help, what you teach,
+          and what remains after you are gone.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="empire">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">03 • THE EMPIRE</div>
+
+      <h2>Multiple paths. One vision.</h2>
+
+      <p>
+        The Porter Empire brings different areas of business together
+        under one standard: learn, build, lead, and create lasting value.
+      </p>
     </div>
 
-    <div class="business-card">
-      <h3>BUSINESS</h3>
-      <p>Companies, services, partnerships, and enterprise.</p>
+    <div class="grid">
+
+      <div class="card">
+        <div class="number">01 • ELECTRICAL & CONSTRUCTION</div>
+
+        <h3>Build what stands.</h3>
+
+        <p>
+          Electrical and construction represent the physical side
+          of the vision: creating, improving, repairing, developing,
+          and building things that people and communities can depend on.
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="number">02 • REAL ESTATE</div>
+
+        <h3>Build where people live.</h3>
+
+        <p>
+          Real estate is about more than property.
+          It can create stability, ownership, development,
+          opportunity, and long-term value when approached
+          with knowledge and responsibility.
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="number">03 • TRADING & INVESTMENTS</div>
+
+        <h3>
+          Learn the path. Take the step.
+          Become the one who makes it.
+        </h3>
+
+        <blockquote>
+          “In life, there are risks. Trading and investments are no
+          different. The difference is what you do with the risk.”
+        </blockquote>
+
+        <p>
+          At The Porter Empire, we believe opportunity belongs
+          to those willing to learn, prepare, take calculated steps,
+          and keep moving forward.
+        </p>
+
+        <p>
+          But no one can walk the road for you.
+          Your courage, discipline, and determination must carry
+          you down the path.
+        </p>
+
+        <blockquote>
+          “For a just man falleth seven times, and riseth up again.”
+          — Proverbs 24:16
+        </blockquote>
+      </div>
+
+
+      <div class="card">
+        <div class="number">04 • FUTURE VENTURES</div>
+
+        <h3>Never stop building.</h3>
+
+        <p>
+          The Empire is designed to grow.
+          As opportunities develop, new ventures, partnerships,
+          services, education, and community initiatives can become
+          part of the larger vision.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="standards">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">04 • THE EMPIRE STANDARD</div>
+
+      <h2>Strong standards. Open doors.</h2>
+
+      <p>
+        These standards are not about perfection.
+        They are about protecting the culture, the people,
+        the vision, and the future we are trying to build.
+      </p>
     </div>
 
-    <div class="business-card">
-      <h3>INVESTMENT</h3>
-      <p>Capital, markets, ownership, and long-term growth.</p>
+    <div class="rules">
+
+      <div class="rule">
+        <strong>01. Guard Your Tongue</strong>
+        <span>
+          Speak life. No tearing people down, belittling,
+          rumors, or destructive speech.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>02. Respect Everyone</strong>
+        <span>
+          Disagree without disrespect.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>03. No Drama</strong>
+        <span>
+          No unnecessary conflict, gossip, rumors, or division.
+          Address problems directly or with leadership.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>04. Take Responsibility</strong>
+        <span>
+          Own your decisions, acknowledge mistakes,
+          learn, correct, and move forward.
+          Excuses don't build empires. Accountability does.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>05. Be Willing to Learn</strong>
+        <span>
+          Ask. Listen. Study. Practice. Accept correction.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>06. Show Up</strong>
+        <span>
+          Respect commitments and time.
+          Communicate when circumstances change.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>07. Build, Don't Destroy</strong>
+        <span>
+          Bring solutions and help improve what is around you.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>08. Keep Your Character</strong>
+        <span>
+          Do the right thing even when nobody is watching.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>09. No Jealousy</strong>
+        <span>
+          Celebrate progress and learn from other people's success.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>10. Protect the Empire</strong>
+        <span>
+          Protect the culture, reputation, relationships,
+          property, opportunities, and trust.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>11. Work Hard, Work Wise</strong>
+        <span>
+          Combine effort with preparation, patience,
+          strategy, discipline, and learning.
+        </span>
+      </div>
+
+      <div class="rule">
+        <strong>12. Leave People Better</strong>
+        <span>
+          Always ask: “Did I make this better?”
+        </span>
+      </div>
+
     </div>
 
-    <div class="business-card">
-      <h3>ENTREPRENEURSHIP</h3>
-      <p>Ideas turned into businesses and opportunities.</p>
-    </div>
+    <div class="card" style="margin-top:25px">
 
-    <div class="business-card">
-      <h3>CAREERS & OPPORTUNITY</h3>
-      <p>Connecting people with work, skills, and possibilities.</p>
+      <blockquote>
+        “Speak life. Respect people. Control your emotions.
+        Take responsibility. Stay teachable. Keep your word.
+        Work with purpose. Celebrate growth. Protect the vision.
+        Give back. Keep God close. And never stop becoming better.”
+      </blockquote>
+
+      <p>
+        “Finally, brethren, whatsoever things are true,
+        whatsoever things are honest, whatsoever things are just,
+        whatsoever things are pure, whatsoever things are lovely,
+        whatsoever things are of good report; if there be any virtue,
+        and if there be any praise, think on these things.”
+        — Philippians 4:8
+      </p>
+
     </div>
 
   </div>
 </section>
 
 
-<!-- COMMUNITY -->
-<section id="community" class="section dark-section">
-  <div class="section-label">THE COMMUNITY</div>
+<section id="community">
+  <div class="container">
 
-  <h2>People Are<br>The Foundation.</h2>
+    <div class="section-head">
+      <div class="eyebrow">05 • COMMUNITY</div>
 
-  <p class="lead">
-    The Empire is not built around one person.
-    It is built around the people who become part of the vision.
-  </p>
+      <h2>
+        Success means more when it creates opportunity.
+      </h2>
 
-  <p>
-    Entrepreneurs. Workers. Business owners. Investors.
-    Professionals. Customers. Creators. Leaders.
-  </p>
+      <p>
+        The Empire is being built with the intention of giving back,
+        creating opportunities, developing people, and contributing
+        to stronger communities.
+      </p>
 
-  <p>
-    Every connection has the potential to create another connection.
-    That network is what allows the vision to grow.
-  </p>
-</section>
+      <blockquote>
+        Build yourself. Then help build somebody else.
+      </blockquote>
 
+      <p>
+        A powerful business should not only create profit.
+        It should create possibilities.
+      </p>
+    </div>
 
-<!-- LEGACY -->
-<section id="legacy" class="section legacy-section">
-  <div class="section-label">THE FUTURE</div>
+    <div class="grid">
 
-  <h2>This Is Only<br>The Beginning.</h2>
+      <div class="card">
+        <h3>MENTORSHIP</h3>
+        <p>
+          Help people learn from experience and develop confidence.
+        </p>
+      </div>
 
-  <p>
-    Jaden Porter started with a vision.
-    The mission is to turn that vision into an organization,
-    the organization into a network, and the network into an ecosystem.
-  </p>
+      <div class="card">
+        <h3>OPPORTUNITY</h3>
+        <p>
+          Create pathways for people to work, learn, and grow.
+        </p>
+      </div>
 
-  <div class="legacy-line">
-    <span>BUILD</span>
-    <span>INVEST</span>
-    <span>EXPAND</span>
-    <span>LEAD</span>
-    <span>IMPACT</span>
+      <div class="card">
+        <h3>EDUCATION</h3>
+        <p>
+          Encourage practical knowledge, discipline,
+          and financial understanding.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>COMMUNITY</h3>
+        <p>
+          Support projects that leave neighborhoods stronger.
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 
-<!-- CONNECT -->
-<section id="connect" class="section connect-section">
-  <div class="section-label">CONNECT WITH THE EMPIRE</div>
+<section id="legacy">
+  <div class="container">
 
-  <h2>Be Part Of<br>What Comes Next.</h2>
+    <div class="section-head">
+      <div class="eyebrow">06 • LEGACY</div>
 
-  <p>
-    Whether you're building a business, looking for an opportunity,
-    searching for a professional, or simply want to connect —
-    the door is open.
-  </p>
+      <h2>
+        Start with a vision. Finish with a legacy.
+      </h2>
 
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <input type="tel" placeholder="Phone Number">
-    <textarea placeholder="How can we connect?"></textarea>
+      <p>
+        The Porter Empire is not being built for a moment.
+        It is being built with the intention of becoming something
+        that can outlive one person, one season, or one generation.
+      </p>
+    </div>
 
-    <button type="submit">
-      JOIN THE EMPIRE →
-    </button>
-  </form>
+    <div class="card">
+
+      <h3>The Standard Is the Legacy</h3>
+
+      <p>
+        Build with integrity. Lead with humility.
+        Learn constantly. Protect your character.
+        Take opportunities seriously. Keep good people around you.
+        Give back. Stay grounded. And when you rise,
+        reach back for somebody else.
+      </p>
+
+      <blockquote>
+        The goal isn't perfection. The goal is progress.
+      </blockquote>
+
+      <p>
+        Come as you are. Learn. Build. Grow. Become.
+      </p>
+
+      <h3>
+        THE PORTER EMPIRE — BUILT TO LEAD. DESIGNED TO LAST.
+      </h3>
+
+    </div>
+  </div>
 </section>
+
+
+<section id="connect">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="eyebrow">07 • CONNECT</div>
+
+      <h2>Ready to build?</h2>
+
+      <p>
+        Tell The Porter Empire who you are,
+        what you are interested in,
+        and what you want to build.
+        Every journey starts with a first step.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="card contact-info">
+
+        <h3>The Porter Empire</h3>
+
+        <p>
+          For business inquiries, partnerships,
+          opportunities, questions, and people ready
+          to learn more about the vision.
+        </p>
+
+        <p>
+          <strong>Phone:</strong><br>
+          <a href="tel:9844085174">984-408-5174</a>
+        </p>
+
+        <p>
+          <strong>Email:</strong><br>
+          <a href="mailto:Theporterempire1@gmail.com">
+            Theporterempire1@gmail.com
+          </a>
+        </p>
+
+        <blockquote>
+          Come with purpose.<br>
+          Bring your questions.<br>
+          Bring your ambition.<br>
+          Bring your willingness to learn.
+        </blockquote>
+
+      </div>
+
+
+      <div class="card">
+
+        <form
+          action="https://formsubmit.co/e33acc23665cdee9b3c8ea2ed9e0738a"
+          method="POST">
+
+          <input
+            type="hidden"
+            name="_next"
+            value="https://theporterempire.github.io/">
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Porter Empire Website Submission">
+
+          <input
+            type="hidden"
+            name="_captcha"
+            value="false">
+
+          <label>
+            Full Name *
+            <input
+              type="text"
+              name="Name"
+              required>
+          </label>
+
+          <label>
+            Email *
+            <input
+              type="email"
+              name="Email"
+              required>
+          </label>
+
+          <label>
+            Phone
+            <input
+              type="tel"
+              name="Phone">
+          </label>
+
+          <label>
+            Date of Birth
+            <input
+              type="text"
+              name="Date of Birth"
+              placeholder="MM/DD/YYYY">
+          </label>
+
+          <label>
+            What interests you most? *
+
+            <select name="Interest" required>
+
+              <option value="">
+                Select one
+              </option>
+
+              <option>
+                Electrical & Construction
+              </option>
+
+              <option>
+                Real Estate
+              </option>
+
+              <option>
+                Trading & Investments
+              </option>
+
+              <option>
+                Business & Entrepreneurship
+              </option>
+
+              <option>
+                Community & Mentorship
+              </option>
+
+              <option>
+                Partnership / Collaboration
+              </option>
+
+              <option>
+                General Inquiry
+              </option>
+
+            </select>
+          </label>
+
+          <label>
+            Message *
+
+            <textarea
+              name="Message"
+              required
+              placeholder="Tell us about yourself and what you want to build."></textarea>
+          </label>
+
+          <button
+            class="btn primary"
+            type="submit">
+            Submit to The Porter Empire
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+
+    <p>
+      <strong>THE PORTER EMPIRE</strong>
+    </p>
+
+    <p>
+      Jaden Porter — Founder & CEO
+    </p>
+
+    <p>
+      Built to Lead. Designed to Last. © 2026 The Porter Empire.
+    </p>
+
+  </div>
+</footer>
+
+</body>
+</html>
